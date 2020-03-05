@@ -1,0 +1,27 @@
+﻿<!Doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+
+    @RenderSection("header", false)
+</head>
+<body>
+    <header>
+        <nav class="navbar bg-white">
+            <a class="navbar-brand text-body">Secure App</a>
+            <ul class="ml-auto"></ul>
+        </nav>
+    </header>
+
+    @RenderBody()
+
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
+    @RenderSection("scripts", false)
+</body>
+</html>
