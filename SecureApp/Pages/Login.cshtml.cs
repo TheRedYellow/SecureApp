@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using SecureApp.Pages.Services;
+using SecureApp.Services;
 
 namespace SecureApp
 {
@@ -31,7 +31,20 @@ namespace SecureApp
 
         public async Task<IActionResult> OnPost()
         {
-            (string user, string pass) = loginProvider.GetLoginInfo();
+            string user, pass;
+
+            try
+            {
+                (user, pass) = loginProvider.GetLoginInfo();
+            }
+            catch (Exception ex)
+            {
+                logger.LogCritical(ex.Message);
+                Response.StatusCode = 500;
+                return Content(ex.Message);
+            }
+
+
 
 
             if (String.Compare(UserName, user, false) == 0 && String.Compare(Password, pass, false) == 0)

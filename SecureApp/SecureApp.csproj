@@ -5,8 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="files\pass.txt" />
-    <None Remove="files\user.txt" />
+    <None Remove="files\logininfo.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="files\logininfo.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -15,15 +20,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="files\pass.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="files\user.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
 </Project>
